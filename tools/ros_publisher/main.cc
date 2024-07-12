@@ -176,6 +176,7 @@ SurviveSimpleContext * actx_from_ros(ros::NodeHandle& n) {
     for (auto &k : arg_names) {
         if(k.find(node_name + "/") == 0) {
             std::string local_name = k.c_str() + node_name.size() + 1;
+            std::replace(local_name.begin(), local_name.end(), '_', '-');
             arg_values.emplace_back("--" + local_name);
 
             double vf;
