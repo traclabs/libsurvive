@@ -1,7 +1,8 @@
 project(survive_publisher)
 cmake_minimum_required(VERSION 3.12)
 
-add_compile_options(-std=c++14)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 if(NOT TARGET survive)
   message("Adding base cmake...")
